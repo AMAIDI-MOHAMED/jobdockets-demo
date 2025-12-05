@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting…</title>
+    <meta name="robots" content="noindex" />
+    <script>
+      (function () {
+        var redirectPath =
+          window.location.pathname +
+          window.location.search +
+          window.location.hash;
+
+        try {
+          sessionStorage.setItem("__jobdockets_redirect", redirectPath);
+        } catch (err) {
+          console.warn("Unable to preserve deep-link path:", err);
+        }
+
+        var basePath = window.location.pathname.replace(/404\.html?$/, "");
+        if (!basePath.endsWith("/")) {
+          basePath += "/";
+        }
+        window.location.replace(basePath || "/");
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>You need JavaScript enabled to view this site.</noscript>
+  </body>
+</html>

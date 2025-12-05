@@ -1,0 +1,1 @@
+import{u as a}from"./query-vendor-BvbPYVyx.js";import{u as r}from"./index-BC2_Mo0X.js";const e=e=>{const n=r(),{data:o,isLoading:t,error:i}=a({queryKey:["dynamicPage",e],queryFn:async()=>{var a;if(!e)return null;const r=await n.get(`/dynamic-page?slug=${e}`);return null==(a=null==r?void 0:r.data)?void 0:a.data},enabled:!!e});return{pageData:o,isLoading:t,error:i}};export{e as u};

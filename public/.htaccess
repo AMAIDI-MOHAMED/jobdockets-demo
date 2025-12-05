@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Force all www traffic to the canonical non-www domain
+  RewriteCond %{HTTP_HOST} ^www\.jobdockets\.com$ [NC]
+  RewriteRule ^(.*)$ https://jobdockets.com/$1 [L,R=301]
+
+  # Redirect legacy course detail URLs
+  RewriteRule ^courses/e/[^/]+/([^/]+)/?$ https://jobdockets.com/courses/$1 [L,R=301]
+  RewriteRule ^courses/e/([^/]+)/?$ https://jobdockets.com/courses/$1 [L,R=301]
+
+  # Redirect any legacy numeric course IDs to the free courses landing page
+  RewriteRule ^courses/[0-9]+/?$ https://jobdockets.com/free-courses [L,R=301]
+  RewriteRule ^courses/?$ https://jobdockets.com/free-courses [L,R=301]
+  RewriteRule ^courses/category/([^/]+)/subcategory/([^/]+)/?$ https://jobdockets.com/courses/c/$1/$2 [L,R=301]
+  RewriteRule ^courses/category/([^/]+)/?$ https://jobdockets.com/courses/c/$1 [L,R=301]
+  RewriteRule ^courses/subcategory/([^/]+)/?$ https://jobdockets.com/free-courses [L,R=301]
+
+  # Redirect legacy blog URLs to the blog listing page
+  RewriteRule ^blogs/[0-9]+/?$ https://jobdockets.com/blog [L,R=301]
+
+  # Redirect legacy job filter URLs to the new compact format
+  RewriteRule ^jobs/category/([^/]+)/location/([^/]+)/?$ https://jobdockets.com/jobs/c/$1/l/$2 [L,R=301]
+  RewriteRule ^jobs/category/([^/]+)/?$ https://jobdockets.com/jobs/c/$1 [L,R=301]
+  RewriteRule ^jobs/location/([^/]+)/?$ https://jobdockets.com/jobs/l/$1 [L,R=301]
+  RewriteRule ^jobs/[0-9]+/?$ https://jobdockets.com/all-jobs [L,R=301]
+
+  # Redirect all requests to index.html except for existing files and directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+ErrorDocument 404 /404.html

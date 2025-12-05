@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+# Google requires patterns to be relative to the current host.
+Disallow: /admin
+
+Sitemap: https://jobdockets.com/sitemaps/sitemap.xml
+Sitemap: https://jobdockets.com/sitemaps/jobs-sitemap.xml
+Sitemap: https://jobdockets.com/sitemaps/courses-sitemap.xml
+Sitemap: https://jobdockets.com/sitemaps/blogs-sitemap.xml

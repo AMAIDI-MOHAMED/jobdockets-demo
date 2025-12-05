@@ -1,0 +1,104 @@
+{
+  "name": "reactnew",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "postbuild": "react-snap",
+    "build:full": "node build-with-routes.js",
+    "generate-routes": "node generate-routes.js",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "reactSnap": {
+    "source": "dist",
+    "minifyHtml": {
+      "collapseWhitespace": true,
+      "removeComments": true,
+      "removeAttributeQuotes": false,
+      "minifyCSS": true
+    },
+    "puppeteerArgs": [
+      "--no-sandbox",
+      "--disable-setuid-sandbox"
+    ],
+    "concurrency": 4,
+    "include": [
+      "/",
+      "/jobs",
+      "/free-courses",
+      "/blog",
+      "/about",
+      "/contact",
+      "/privacy",
+      "/terms",
+      "/rates-invoices"
+    ],
+    "skipThirdPartyRequests": true,
+    "cacheAjaxRequests": false,
+    "preloadImages": true,
+    "removeBlobs": true,
+    "fixInsertRule": true,
+    "inlineCss": false
+  },
+  "dependencies": {
+    "@radix-ui/react-accordion": "^1.2.10",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@react-pdf/renderer": "^4.3.0",
+    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/vite": "^4.1.5",
+    "@tanstack/react-query": "^5.75.4",
+    "@tanstack/react-query-devtools": "^5.75.4",
+    "antd": "^5.25.2",
+    "axios": "^1.9.0",
+    "chart.js": "^4.5.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dompurify": "^3.2.6",
+    "framer-motion": "^12.12.2",
+    "html-to-image": "^1.11.13",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "lenis": "^1.3.3",
+    "lightningcss": "^1.29.3",
+    "lucide-react": "^0.507.0",
+    "primereact": "^10.9.5",
+    "quill": "^2.0.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-helmet-async": "^2.0.5",
+    "react-hook-form": "^7.60.0",
+    "react-hot-toast": "^2.5.2",
+    "react-icons": "^5.5.0",
+    "react-player": "^2.16.0",
+    "react-router-dom": "^7.5.3",
+    "react-router-hash-link": "^2.4.3",
+    "swiper": "^11.2.8",
+    "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@types/node": "^22.15.14",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react-swc": "^3.9.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "react-snap": "^1.13.1",
+    "terser": "^5.44.1",
+    "tw-animate-css": "^1.2.9",
+    "vite": "^6.3.5"
+  },
+  "overrides": {
+    "react-snap": {
+      "cheerio": "^1.0.0",
+      "nth-check": "^2.0.0"
+    }
+  }
+}

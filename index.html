@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GRK86BDKEH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GRK86BDKEH');
+    </script>
+
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/assets/images/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Default SEO Meta Tags (will be overridden by react-helmet-async) -->
+    <meta name="description" content="Find the latest job opportunities and free courses on Jobdockets. Your gateway to career growth and professional development." />
+    <meta name="keywords" content="jobs, careers, courses, online learning, job search, professional development" />
+    <meta name="author" content="Jobdockets" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jobdockets.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jobdockets.com/" />
+    <meta property="og:title" content="Jobdockets - Find Jobs & Free Courses" />
+    <meta property="og:description" content="Find the latest job opportunities and free courses on Jobdockets." />
+    <meta property="og:site_name" content="Jobdockets" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://jobdockets.com/" />
+    <meta name="twitter:title" content="Jobdockets - Find Jobs & Free Courses" />
+    <meta name="twitter:description" content="Find the latest job opportunities and free courses on Jobdockets." />
+    
+    <title>Jobdockets - Find Jobs & Free Courses</title>
+  </head>
+  <body>
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #f0f0f0;">
+        <h1>Jobdockets</h1>
+        <p>Please enable JavaScript to use this application.</p>
+        <p>For the best experience, JavaScript is required.</p>
+      </div>
+    </noscript>
+    <div id="root"></div>
+    <script>
+      (function () {
+        try {
+          const redirectPath = sessionStorage.getItem("__jobdockets_redirect");
+          if (redirectPath) {
+            sessionStorage.removeItem("__jobdockets_redirect");
+            window.history.replaceState(null, null, redirectPath);
+          }
+        } catch (err) {
+          console.warn("Unable to restore deep-link path:", err);
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
