@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "postbuild": "react-snap",
-    "build:full": "node build-with-routes.js",
+    "build:full": "vite build && react-snap",
+    "postbuild": "echo 'Skipping react-snap for Vercel deployment'",
     "generate-routes": "node generate-routes.js",
     "lint": "eslint .",
     "preview": "vite preview"
